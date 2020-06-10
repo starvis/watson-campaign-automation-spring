@@ -14,7 +14,7 @@ import com.github.ka4ok85.wca.Engage;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { SpringConfig.class })
-@TestPropertySource(properties = { "podNumber=1", "clientId=test client id", "clientSecret=test client secret",
+@TestPropertySource(properties = { "podIdentifier=eu-1", "clientId=test client id", "clientSecret=test client secret",
 		"refreshToken=test token", })
 public class SpringConfigTest {
 	@Autowired

@@ -86,8 +86,8 @@ public class Engage {
 		getApplicationContext();
 	}
 
-	public Engage(int podNumber, String clientId, String clientSecret, String refreshToken) {
-		this.oAuthClient = new OAuthClientImplementation(podNumber, clientId, clientSecret, refreshToken);
+	public Engage(String podIdentifier, String clientId, String clientSecret, String refreshToken) {
+		this.oAuthClient = new OAuthClientImplementation(podIdentifier, clientId, clientSecret, refreshToken);
 		this.sftp = new SFTP(this.oAuthClient);
 	}
 

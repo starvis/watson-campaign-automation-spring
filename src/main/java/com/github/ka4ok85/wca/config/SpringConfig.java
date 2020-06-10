@@ -15,9 +15,9 @@ public class SpringConfig {
 
 	@Bean
 	@Scope("prototype")
-	public Engage engage(@Value("${podNumber}") int podNumber, @Value("${clientId}") String clientId,
+	public Engage engage(@Value("${podIdentifier}") String podIdentifier, @Value("${clientId}") String clientId,
 			@Value("${clientSecret}") String clientSecret, @Value("${refreshToken}") String refreshToken) {
-		return new Engage(podNumber, clientId, clientSecret, refreshToken);
+		return new Engage(podIdentifier, clientId, clientSecret, refreshToken);
 	}
 
 	@Bean

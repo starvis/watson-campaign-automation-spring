@@ -1,5 +1,5 @@
 # watson-campaign-automation-spring
-
+<!--
 <div align="center">
   
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.ka4ok85/watson-campaign-automation-spring/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.ka4ok85/watson-campaign-automation-spring)
@@ -7,6 +7,7 @@
 [![HitCount](http://hits.dwyl.io/ka4ok85/watson-campaign-automation-spring.svg)](http://hits.dwyl.io/ka4ok85/watson-campaign-automation-spring)
 
 </div>
+-->
 
 # Installation
 
@@ -57,7 +58,7 @@ In order to call API please follow these instructions:
 #### Spring Boot
 1. Add required values to *application.properties*
 ```
-podNumber=1
+podIdentifier=us-1
 clientId=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 clientSecret=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 refreshToken=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx

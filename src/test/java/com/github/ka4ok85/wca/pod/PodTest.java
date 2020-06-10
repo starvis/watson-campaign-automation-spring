@@ -8,38 +8,38 @@ public class PodTest {
 
 	@Test
 	public void testGetOAuthEndpoint() {
-		String oAuthEndpoint = Pod.getOAuthEndpoint(2);
-		assertEquals(oAuthEndpoint, "https://api2.silverpop.com/oauth/token");
+		String oAuthEndpoint = Pod.getOAuthEndpoint("eu-1");
+		assertEquals(oAuthEndpoint, "https://api-campaign-eu-1.goacoustic.com/oauth/token");
 	}
 
 	@Test(expected = RuntimeException.class)
 	public void testGetOAuthEndpointThrowsException() {
-		String oAuthEndpoint = Pod.getOAuthEndpoint(234);
-		assertEquals(oAuthEndpoint, "https://api2.silverpop.com/oauth/token");
+		String oAuthEndpoint = Pod.getOAuthEndpoint("eu1");
+		assertEquals(oAuthEndpoint, "https://api-campaign-eu-1.goacoustic.com/oauth/token");
 	}
 
 	@Test
 	public void testXMLAPIEndpoint() {
-		String xMLAPIEndpoint = Pod.getXMLAPIEndpoint(4);
-		assertEquals(xMLAPIEndpoint, "https://api4.silverpop.com/XMLAPI");
+		String xMLAPIEndpoint = Pod.getXMLAPIEndpoint("us-4");
+		assertEquals(xMLAPIEndpoint, "https://api-campaign-us-4.goacoustic.com/XMLAPI");
 	}
 
 	@Test(expected = RuntimeException.class)
 	public void testXMLAPIEndpointThrowsException() {
-		String xMLAPIEndpoint = Pod.getXMLAPIEndpoint(456);
-		assertEquals(xMLAPIEndpoint, "https://api4.silverpop.com/XMLAPI");
+		String xMLAPIEndpoint = Pod.getXMLAPIEndpoint("456");
+		assertEquals(xMLAPIEndpoint, "https://api-campaign-us-4.goacoustic.com.com/XMLAPI");
 	}
 
 	@Test
 	public void testSFTPHostName() {
-		String sFTPHostName = Pod.getSFTPHostName(3);
-		assertEquals(sFTPHostName, "transfer3.silverpop.com");
+		String sFTPHostName = Pod.getSFTPHostName("us-3");
+		assertEquals(sFTPHostName, "transfer-campaign-us-3.goacoustic.com");
 	}
 
 	@Test(expected = RuntimeException.class)
 	public void testSFTPHostNameThrowsException() {
-		String sFTPHostName = Pod.getSFTPHostName(345);
-		assertEquals(sFTPHostName, "transfer3.silverpop.com");
+		String sFTPHostName = Pod.getSFTPHostName("us-8");
+		assertEquals(sFTPHostName, "transfer-campaign-us-3.goacoustic.com");
 	}
 
 }

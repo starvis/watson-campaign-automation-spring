@@ -32,13 +32,13 @@ public class SFTP {
 	public void download(String filePath, String localAbsoluteFilePath) {
 		try {
 			JSch jsch = new JSch();
-			Session session = jsch.getSession(username, Pod.getSFTPHostName(this.oAuthClient.getPodNumber()), port);
+			Session session = jsch.getSession(username, Pod.getSFTPHostName(this.oAuthClient.getPodIdentifier()), port);
 			session.setPassword(this.oAuthClient.getAccessToken());
 			Properties config = new Properties();
 			config.put("StrictHostKeyChecking", "no");
 			session.setConfig(config);
 
-			log.debug("Connecting to SFTP. Hostname is {}", Pod.getSFTPHostName(this.oAuthClient.getPodNumber()));
+			log.debug("Connecting to SFTP. Hostname is {}", Pod.getSFTPHostName(this.oAuthClient.getPodIdentifier()));
 			session.connect();
 			Channel channel = session.openChannel("sftp");
 			channel.connect();
@@ -65,13 +65,13 @@ public class SFTP {
 	public void upload(String localAbsoluteFilePath, String filePath) {
 		try {
 			JSch jsch = new JSch();
-			Session session = jsch.getSession(username, Pod.getSFTPHostName(this.oAuthClient.getPodNumber()), port);
+			Session session = jsch.getSession(username, Pod.getSFTPHostName(this.oAuthClient.getPodIdentifier()), port);
 			session.setPassword(this.oAuthClient.getAccessToken());
 			Properties config = new Properties();
 			config.put("StrictHostKeyChecking", "no");
 			session.setConfig(config);
 
-			log.debug("Connecting to SFTP. Hostname is {}", Pod.getSFTPHostName(this.oAuthClient.getPodNumber()));
+			log.debug("Connecting to SFTP. Hostname is {}", Pod.getSFTPHostName(this.oAuthClient.getPodIdentifier()));
 			session.connect();
 			Channel channel = session.openChannel("sftp");
 			channel.connect();

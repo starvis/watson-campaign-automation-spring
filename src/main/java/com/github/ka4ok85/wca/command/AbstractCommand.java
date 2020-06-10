@@ -142,7 +142,7 @@ public abstract class AbstractCommand<T extends AbstractResponse, V extends Abst
 		try {
 			RestTemplate restTemplate = new RestTemplate();
 			restTemplate.getMessageConverters().add(0, new StringHttpMessageConverter(Charset.forName("UTF-8")));
-			ResponseEntity<String> result = restTemplate.exchange(Pod.getXMLAPIEndpoint(oAuthClient.getPodNumber()),
+			ResponseEntity<String> result = restTemplate.exchange(Pod.getXMLAPIEndpoint(oAuthClient.getPodIdentifier()),
 					HttpMethod.POST, entity, String.class);
 			try {
 				DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
